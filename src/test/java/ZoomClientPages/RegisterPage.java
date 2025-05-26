@@ -1,15 +1,26 @@
 package ZoomClientPages;
 
+import org.openqa.selenium.By;
+import static Tests.ZoomClientTest.driver;
+
 public class RegisterPage {
 
-    public static String register_header ="/html/body/app-root/div/div[1]/ng-component/div/div/div[2]/div[1]/h4";
-    public static String table_register_cardbody ="//*[@id=\"BodycustomerDetails\"]/div";
-    public static String firstname_textbox ="//*[@id=\"first_name\"]";
+    //Locators
 
-    public static void register_getTitle(){
+    static String registerFirstName = "//input[@id='registerFirstName']";
+    static String registerLastName = "//input[@id='registerLastName']";
+    static String registerEmail = "//input[@id='registerEmail']";
+    static String registerButton = "//button[contains(text(),'Register')]";
 
+    public static void fillRegistrationForm(String fName, String lName, String email) throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(By.xpath(registerFirstName)).sendKeys(fName);
+        driver.findElement(By.xpath(registerLastName)).sendKeys(lName);
+        driver.findElement(By.xpath(registerEmail)).sendKeys(email);
     }
-    public static void enter_firstname(){
 
+    public static void submitRegistration() throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(By.xpath(registerButton)).click();
     }
 }
