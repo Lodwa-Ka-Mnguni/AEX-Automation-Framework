@@ -45,21 +45,17 @@ public class ZoomClientTest {
         // Save to target/screenshots/
         String folderPath = System.getProperty("user.dir") + "/target/screenshots/";
         String fileName = System.currentTimeMillis() + ".png";
-
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File destFile = new File(folderPath + fileName);
-
         // Create folder if it doesn't exist
         new File(folderPath).mkdirs();
-
         FileUtils.copyFile(scrFile, destFile);
-
         // Return relative path for ExtentReports to embed in HTML
         return "screenshots/" + fileName;
     }
 
 
-    //    // After each test
+    // After each test
     @AfterMethod
     public void tearDown(ITestResult result) throws IOException {
         if (result.getStatus() == ITestResult.FAILURE) {
@@ -201,6 +197,7 @@ public class ZoomClientTest {
         test = extent.createTest("A user views the client App tabs displayed at the top of the page", "The following tabs display:\n" + "My Packages\n" + "My Profile");
         DashboardPage.verify_dashboard_page();
         test = extent.createTest("A user views the My packages tabs", "The My Packages page displays with all the  packages assigned to the user");
+        DashboardPage.click_my_profile_button();
 
     }
     @Test
