@@ -29,8 +29,11 @@ public class ZoomClientTest {
     public static void Setup() throws IOException, InterruptedException {
         driver = new ChromeDriver();
         driver.get("https://stage.zoomfibre.client-interface.dev.aex.systems/landing");
+
         ExtentSparkReporter spark = new ExtentSparkReporter("target/ZoomClientApp.html");
+        spark.loadXMLConfig(new File("extent-config.xml"));
         extent.attachReporter(spark);
+
         driver.manage().window().maximize();
             test = extent.createTest("Open the appropriate URL for the FNO", "User is presented with  the landing page");
             LandingPage.verify_home_page();
@@ -165,7 +168,6 @@ public class ZoomClientTest {
         test = extent.createTest("A user captures a premise within the Pre order kml and select the Pre order button", "The following is displayed:\n" + "Check out page displays, and the following fields should contain previously captured information.\n" + "a. First Name*b. Last Name*c. Phone Number*d. Alternative Numbere. E-mail Address* 2.Place order button");
         test = extent.createTest("A user selects the place order button", "A pop up displays with a message \"Thank you for your Order\" and the Go To Account button");
 
-
     }
     @Test
     void CLIENT_APP_Pre_Order() throws InterruptedException, IOException {
@@ -180,11 +182,11 @@ public class ZoomClientTest {
     void CLIENT_APP_User_Login() throws InterruptedException, IOException {
         test = extent.createTest("CLIENT_APP: User Login Flow");
 
-            test.info("Clicking Login button on landing page...");
+            test.info("Verify login page.");
             LandingPage.click_login_button();
             LoginPage.verify_login_page();
 
-            test.info("Entering valid credentials...");
+            test.info("Entered valid credentials...");
             LoginPage.enter_email();
             LoginPage.enter_password();
             LoginPage.click_login();
@@ -197,7 +199,8 @@ public class ZoomClientTest {
         test = extent.createTest("A user views the client App tabs displayed at the top of the page", "The following tabs display:\n" + "My Packages\n" + "My Profile");
         DashboardPage.verify_dashboard_page();
         test = extent.createTest("A user views the My packages tabs", "The My Packages page displays with all the  packages assigned to the user");
-        DashboardPage.click_my_profile_button();
+        DashboardPage.click_my_packages_button();
+        //DashboardPage.click_order_package_button();
 
     }
     @Test
@@ -209,7 +212,6 @@ public class ZoomClientTest {
         test = extent.createTest("A user views the package information:\n" + "Current status", "The correct Service status displays \"Pending ISP Application\" / New Order for Order now   \n" + "\n" + "Expression of interest for Show my interest");
         test = extent.createTest("A user views the Payment History Accordion", "The following is displayed:\\n\" + \"\\n\" + \"Purchase date\\n\" + \"\\n\" + \"Product Price\\n\" + \"\\n\" + \"Total Amount.\\n\" + \"\\n\" + \"Payment status.\\n\" + \"\\n\" + \"Payment Date\\n\" + \"\\n\" + \"Download Invoice Button\"");
         test = extent.createTest("A user selects the Back to Dashboard button.", "The Dashboard Displays");
-
 
     }
 
@@ -233,9 +235,12 @@ public class ZoomClientTest {
     }
     @Test
     void CLIENT_APP_Edit_My_Profile() throws InterruptedException, IOException {
+        CLIENT_APP_View_tabs();
         test = extent.createTest("A user selects the My Profile tab", "The Edit My Profile page displays");
+        DashboardPage.click_my_profile_button();
+        DashboardPage.verify_edit_my_profile_page();
         test = extent.createTest("A user can update the profile details", "The profile details should be updated succesfully");
-
+        //DashboardPage.click_save_details_button();
     }
     @AfterSuite
     public static void cleanup() {

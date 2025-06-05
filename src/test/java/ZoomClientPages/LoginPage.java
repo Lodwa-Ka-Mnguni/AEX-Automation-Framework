@@ -46,9 +46,12 @@ public class LoginPage {
         Thread.sleep(2000);
         driver.findElement(By.xpath(passwordInput)).sendKeys("tendanir@automationexchange.co.za");
     }
-    public static void click_login() throws InterruptedException {
+    public static void click_login() throws InterruptedException, IOException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(loginBtn)).click();
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
     }
 
 }

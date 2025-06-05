@@ -1,0 +1,25 @@
+<extentreports>
+    <configuration>
+        <theme>DARK</theme>
+        <encoding>utf-8</encoding>
+        <reportName>Zoom Client App Regression Report</reportName>
+        <documentTitle>Zoom Client Automation Report</documentTitle>
+        <timelineEnabled>true</timelineEnabled>
+
+        <!-- Set logo -->
+        <a class="nav-logo">
+            <img src="images/AEX-Logo-small.png" style="width: 120px; height: auto;" />
+        </a>
+
+        <!-- Custom CSS -->
+        <custom-css>
+            <![CDATA[
+        body {
+          background-image: url('images/AEX-Logo-Lockup-White-Small.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      ]]>
+        </custom-css>
+    </configuration>
+</extentreports>
