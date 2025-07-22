@@ -26,7 +26,7 @@ public class LogInPortalPage {
         Assert.assertEquals(actualTitleLOG,expectedTitleLOG);
         String screenshotPath = captureScreenshot(driver);
         if (expectedTitleLOG.equals(actualTitleLOG)) {
-            test.log(Status.PASS, "User is presented with the dashboard page");
+            test.log(Status.PASS, "User is presented with the Login page");
             test.pass("Actual Result",
                     MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         } else {

@@ -79,14 +79,18 @@ public class OpenFiberPortalChecklist {
             test = extent.createTest("Portal:Confirm KMLs load in both the Portal and Client App");
             LandingPortalPage.click_check_coverage_button();
             CoverageMapPortalPage.verify_map_page();
+            test.info("Upon entering a live premise address, the user is presented with a list of relevant addresses in the dropdown.");
             CoverageMapPortalPage.click_search_bar();
             CoverageMapPortalPage.enter_address();
 
             test= extent.createTest("Portal: Verify products appear on maps");
+            test.info("Once the address is selected, the corresponding product is displayed on the map.");
             CoverageMapPortalPage.select_address();
 
             test= extent.createTest("Portal: Attempt to place an order");
+            test.info("User successfully clicked the Order Now button and is now presented with the Confirm Your Address screen.");
             CoverageMapPortalPage.click_order_now_button();
+            CoverageMapPortalPage.click_home_img();
         }
 
         @Test(priority = 2)
@@ -97,7 +101,7 @@ public class OpenFiberPortalChecklist {
             LandingPortalPage.click_login_button();
             LogInPortalPage.verify_login_page();
 
-            test.info("Entered valid credentials...");
+            test.info("Valid credentials were entered, and the user is now presented with the Dashboard page.");
             LogInPortalPage.enter_email();
             LogInPortalPage.enter_password();
             LogInPortalPage.click_login();

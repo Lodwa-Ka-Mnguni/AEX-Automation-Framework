@@ -19,6 +19,7 @@ public class CoverageMapPortalPage {
     static String click_search = "//*[@id=\"select2-pac-input-container\"]/span";
     static String select_address = "//*[@id=\"select2-pac-input-results\"]/li[1]";
     static String order_now_button = "//*[@id=\"map-canvas\"]/div/div[3]/div[1]/div[2]/div/div[4]/div/div/div/div[1]/div[2]/div/div/div/div[3]/button[1]";
+    static String home_img = "/html/body/div[3]/header/div/div/div[1]";
 
     public static void click_search_bar() throws InterruptedException, IOException {
         Thread.sleep(2000);
@@ -70,5 +71,9 @@ public class CoverageMapPortalPage {
         }
 
 
+    }
+    public static void click_home_img() throws InterruptedException, IOException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(home_img)).click();
     }
 }
