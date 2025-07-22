@@ -2,8 +2,8 @@
     <configuration>
         <theme>DARK</theme>
         <encoding>utf-8</encoding>
-        <reportName>Zoom Client App Regression Report</reportName>
-        <documentTitle>Zoom Client Automation Report</documentTitle>
+        <reportName>AEX Automation Testing Report</reportName>
+        <documentTitle>AEX Automation Testing Report</documentTitle>
         <timelineEnabled>true</timelineEnabled>
 
         <!-- Set logo -->
