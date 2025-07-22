@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -28,7 +29,7 @@ public class ZoomClientTest {
     @BeforeSuite
     public static void Setup() throws IOException, InterruptedException {
         driver = new ChromeDriver();
-        driver.get("https://stage.zoomfibre.client-interface.dev.aex.systems/landing");
+        driver.get("https://preprod.zoomfibre.client-interface.dev.aex.systems/landing");
 
         ExtentSparkReporter spark = new ExtentSparkReporter("target/ZoomClientApp.html");
         spark.loadXMLConfig(new File("extent-config.xml"));
@@ -204,12 +205,17 @@ public class ZoomClientTest {
 
     }
     @Test
-    void CLIENT_APP_View_Packages() throws InterruptedException, IOException {
-        test = extent.createTest("A user selects the View Package button", "The package details screen displays which includes the below sections:\\n\" + \"Package Information\\n\" + \"Payment History");
-        test = extent.createTest("A user views the package information:\n" + "Package name", "The Package name should correspond to the one the user has selected on the coverage and packages page.");
-        test = extent.createTest("A user views the package information:\n" + "Premise", "The  premise should correspond to the one the user has captured on the coverage and packages page.");
-        test = extent.createTest("A user views the package information:\n" + "Account Summary", "The correct Account status displays");
-        test = extent.createTest("A user views the package information:\n" + "Current status", "The correct Service status displays \"Pending ISP Application\" / New Order for Order now   \n" + "\n" + "Expression of interest for Show my interest");
+    void CLIENT_APP_Manage_Packages() throws InterruptedException, IOException {
+        CLIENT_APP_View_tabs();
+        test = extent.createTest("A user selects the MANAGE PACKAGES button", "The package details screen displays which includes the below sections:\\n\" + \"Package Information\\n\" + \"Payment History\\n\" + \"Rica Documents");
+        DashboardPage.click_manage_packages_button();
+        DashboardPage.verify_manage_package_page();
+        test = extent.createTest("A user views the package information:" + "Package name", "The Package name should correspond to the one the user has selected on the coverage and packages page.");
+        DashboardPage.verify_package_name();
+        test = extent.createTest("A user views the package information:" + "Premise", "The  premise should correspond to the one the user has captured on the coverage and packages page.");
+        DashboardPage.verify_address_has_any_value();
+        test = extent.createTest("A user views the package information:" + "Account Summary", "The correct Account status displays");
+        test = extent.createTest("A user views the package information:" + "Current status", "The correct Service status displays \"Pending ISP Application\" / New Order for Order now   \n" + "\n" + "Expression of interest for Show my interest");
         test = extent.createTest("A user views the Payment History Accordion", "The following is displayed:\\n\" + \"\\n\" + \"Purchase date\\n\" + \"\\n\" + \"Product Price\\n\" + \"\\n\" + \"Total Amount.\\n\" + \"\\n\" + \"Payment status.\\n\" + \"\\n\" + \"Payment Date\\n\" + \"\\n\" + \"Download Invoice Button\"");
         test = extent.createTest("A user selects the Back to Dashboard button.", "The Dashboard Displays");
 
@@ -240,7 +246,7 @@ public class ZoomClientTest {
         DashboardPage.click_my_profile_button();
         DashboardPage.verify_edit_my_profile_page();
         test = extent.createTest("A user can update the profile details", "The profile details should be updated succesfully");
-        //DashboardPage.click_save_details_button();
+        DashboardPage.click_save_details_button();
     }
     @AfterSuite
     public static void cleanup() {
