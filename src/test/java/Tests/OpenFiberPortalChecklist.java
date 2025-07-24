@@ -1,8 +1,6 @@
 package Tests;
 
-import HyperFiberPortalPages.CoverageMapPortalPage;
-import HyperFiberPortalPages.LandingPortalPage;
-import HyperFiberPortalPages.LogInPortalPage;
+import HyperFiberPortalPages.*;
 import ZoomClientPages.*;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -39,8 +37,11 @@ public class OpenFiberPortalChecklist {
             spark.loadXMLConfig(new File("extent-config.xml"));
             extent.attachReporter(spark);
 
+
+
+
             driver.manage().window().maximize();
-            test = extent.createTest("Open the appropriate URL for the FNO", "User is presented with  the landing page");
+            test = extent.createTest("General System Health", "User is presented with  the landing page");
             LandingPortalPage.verify_homeOP_page();
 
 
@@ -76,19 +77,18 @@ public class OpenFiberPortalChecklist {
 
         @Test(priority = 1)
         void Map_And_Product_Functionality() throws IOException, InterruptedException {
-            test = extent.createTest("Portal:Confirm KMLs load in both the Portal and Client App");
+            test = extent.createTest("Portal:Map & Product Functionality");
+            test.info("Confirm kMLs load in both the Portal and Client App");
             LandingPortalPage.click_check_coverage_button();
             CoverageMapPortalPage.verify_map_page();
             test.info("Upon entering a live premise address, the user is presented with a list of relevant addresses in the dropdown.");
             CoverageMapPortalPage.click_search_bar();
             CoverageMapPortalPage.enter_address();
 
-            test= extent.createTest("Portal: Verify products appear on maps");
-            test.info("Once the address is selected, the corresponding product is displayed on the map.");
+            test.info("Verify products appear on maps");
             CoverageMapPortalPage.select_address();
 
-            test= extent.createTest("Portal: Attempt to place an order");
-            test.info("User successfully clicked the Order Now button and is now presented with the Confirm Your Address screen.");
+            test.info("Attempt to place an order");
             CoverageMapPortalPage.click_order_now_button();
             CoverageMapPortalPage.click_home_img();
         }
@@ -108,6 +108,48 @@ public class OpenFiberPortalChecklist {
 
             test.info("Password Reset to check that emails are being sent and delivered");
         }
+         @Test(priority = 4)
+         void Functional_Testing() throws IOException, InterruptedException {
+            test = extent.createTest("Portal:  HF & Ripple Functional Testing");
+
+             test.info("Progress a Work Order");
+             UiNavigationPortalpage.click_work_orders_button();
+             WorkOrderPortalPage.click_work_oder_ref();
+             test.info("Use Reject the Service to simulate cancellation");
+             WorkOrderPortalPage.click_new_status();
+             test.info("Go to Service Search and use Delete to remove the service");
+             WorkOrderPortalPage.click_view_service();
+             CoverageMapPortalPage.click_home_img();
+
+         }
+
+         @Test
+         void UI_Feature_Review(){
+            test = extent.createTest("UI & Feature Review");
+
+             test.info("Confirm all front-end changes from the release are present and functional");
+             test.info("Add roles as needed for test scenarios");
+         }
+
+         @Test(priority = 3)
+         void Navigation_Component_checks() throws IOException, InterruptedException {
+            test = extent.createTest(" UI Navigation & Component Checks");
+
+             test.info("All page links and navigation function correctly");
+             UiNavigationPortalpage.click_search_users_button();
+             CoverageMapPortalPage.click_home_img();
+             test.info("Dashboards load for all user roles");
+             UiNavigationPortalpage.click_admin_tab_button();
+             CoverageMapPortalPage.click_home_img();
+             test.info("Service Status widgets/components render as expected");
+             UiNavigationPortalpage.click_search_service_button();
+             CoverageMapPortalPage.click_home_img();
+             test.info("Work Order History is visible and complete");
+             UiNavigationPortalpage.click_work_orders_button();
+             CoverageMapPortalPage.click_home_img();
+             test.info("BI Reports load successfully");
+
+         }
 
         @AfterSuite
         public static void cleanup() {

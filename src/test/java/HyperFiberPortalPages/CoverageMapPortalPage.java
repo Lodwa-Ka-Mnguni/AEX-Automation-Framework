@@ -69,9 +69,8 @@ public class CoverageMapPortalPage {
             test.fail("Failure Screenshot",
                     MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         }
-
-
     }
+
     public static void click_home_img() throws InterruptedException, IOException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(home_img)).click();

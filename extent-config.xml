@@ -7,9 +7,8 @@
         <timelineEnabled>true</timelineEnabled>
 
         <!-- Set logo -->
-        <a class="nav-logo">
-            <img src="images/AEX-Logo-small.png" style="width: 120px; height: auto;" />
-        </a>
+
+
 
         <!-- Custom CSS -->
         <custom-css>
