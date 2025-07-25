@@ -1,10 +1,8 @@
 package Tests;
 
 import HyperFiberPortalPages.*;
-import ZoomClientPages.*;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -20,7 +18,6 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-import static Tests.TestUtils.capture;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class OpenFiberPortalChecklist {
@@ -106,36 +103,28 @@ public class OpenFiberPortalChecklist {
             LogInPortalPage.enter_password();
             LogInPortalPage.click_login();
 
-            test.info("Password Reset to check that emails are being sent and delivered");
+            test.info("Password Reset to check that e" +
+                    "" +
+                    "mails are being sent and delivered");
         }
-         @Test(priority = 4)
-         void Functional_Testing() throws IOException, InterruptedException {
-            test = extent.createTest("Portal:  HF & Ripple Functional Testing");
 
-             test.info("Progress a Work Order");
-             UiNavigationPortalpage.click_work_orders_button();
-             WorkOrderPortalPage.click_work_oder_ref();
-             test.info("Use Reject the Service to simulate cancellation");
-             WorkOrderPortalPage.click_new_status();
-             test.info("Go to Service Search and use Delete to remove the service");
-             WorkOrderPortalPage.click_view_service();
-             CoverageMapPortalPage.click_home_img();
-
-         }
-
-         @Test
-         void UI_Feature_Review(){
+         @Test(priority = 3)
+         void UI_Feature_Review() throws IOException, InterruptedException {
             test = extent.createTest("UI & Feature Review");
 
              test.info("Confirm all front-end changes from the release are present and functional");
+             UiNavigationPortalpage.click_admin_tab_button();
+             UiNavigationPortalpage.click_address_management_option();
+             CoverageMapPortalPage.click_home_img();
              test.info("Add roles as needed for test scenarios");
          }
 
-         @Test(priority = 3)
+         @Test(priority = 4)
          void Navigation_Component_checks() throws IOException, InterruptedException {
             test = extent.createTest(" UI Navigation & Component Checks");
 
              test.info("All page links and navigation function correctly");
+             CoverageMapPortalPage.click_home_img();
              UiNavigationPortalpage.click_search_users_button();
              CoverageMapPortalPage.click_home_img();
              test.info("Dashboards load for all user roles");
@@ -144,6 +133,16 @@ public class OpenFiberPortalChecklist {
              test.info("Service Status widgets/components render as expected");
              UiNavigationPortalpage.click_search_service_button();
              CoverageMapPortalPage.click_home_img();
+             UiNavigationPortalpage.click_Service_tab();
+             UiNavigationPortalpage.click_Dashboard_option();
+             UiNavigationPortalpage.click_summary_accordion_element();
+             UiNavigationPortalpage.verify_summary_accordion_element();
+             UiNavigationPortalpage.click_metacom_accordion_element();
+             UiNavigationPortalpage.verify_metacom_accordion_element();
+             UiNavigationPortalpage.click_reflexISP_accordion_element();
+             UiNavigationPortalpage.verify_reflexISP_accordion_element();
+             CoverageMapPortalPage.click_home_img();
+
              test.info("Work Order History is visible and complete");
              UiNavigationPortalpage.click_work_orders_button();
              CoverageMapPortalPage.click_home_img();

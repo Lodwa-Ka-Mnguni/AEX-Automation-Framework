@@ -9,7 +9,7 @@ import static Tests.OpenFiberPortalChecklist.*;
 
 public class WorkOrderPortalPage {
 
-    static String work_oder_ref ="//*[contains(@id, '-table')]//tbody//a";
+    static String work_oder_ref ="//*[@id=\"pr_id_1-table\"]/tbody/tr[2]/td[1]/div/div/div/a";
     static String new_status ="//*[@id=\"StatusId\"]";
     static String view_service ="//*[@id=\"divBackEndPage\"]/div[3]/div[2]/dl/dd[9]/button";
 

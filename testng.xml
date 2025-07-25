@@ -5,6 +5,7 @@
         <classes>
             <class name="Tests.ZoomClientTest"/>
             <class name="Tests.OpenFiberPortalChecklist"/>
+            <class name="Tests.Retool_NetworkSolutionApp_Test"/>
         </classes>
     </test>
 </suite>
