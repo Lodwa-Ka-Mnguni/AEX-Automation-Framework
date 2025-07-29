@@ -35,8 +35,8 @@ public class UiNavigationPortalpage {
     static String option_one ="//*[@id=\"ServiceProvider\"]/option[2]";
     static String Submit_Button_provoder ="//*[@id=\"btnSubmit\"]";
     static String address_input ="//*[@id=\"PredefinedPremise0\"]";
-    static String address_input2 ="//*[@id=\"PredefinedPremise1\"]";
-    static String address_input3 ="//*[@id=\"PredefinedPremise2\"]";
+    static String address_input2 ="PredefinedPremise1";
+    static String address_input3 ="PredefinedPremise2";
     static String first_name_input = "//*[@id=\"dataTable\"]/tbody/tr[1]/td[4]/input";
     static String first_name_input2 = "//*[@id=\"dataTable\"]/tbody/tr[2]/td[4]/input";
     static String first_name_input3 = "//*[@id=\"dataTable\"]/tbody/tr[3]/td[4]/input";
@@ -53,8 +53,8 @@ public class UiNavigationPortalpage {
     static String Product_Input2 ="//*[@id=\"ProductId1\"]";
     static String Product_Input3 ="//*[@id=\"ProductId2\"]";
     static String product_option_one ="//*[@id=\"ProductId0\"]/option[2]";
-    static String product_option_two ="//*[@id=\"ProductId0\"]/option[4]";
-    static String prodct_option_three ="//*[@id=\"ProductId0\"]/option[5]";
+    static String product_option_two ="//*[@id=\"ProductId1\"]/option[4]";
+    static String prodct_option_three ="//*[@id=\"ProductId2\"]/option[5]";
     static String Email_input ="//*[@id=\"dataTable\"]/tbody/tr/td[6]/input";
     static String Email_input2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[6]/input";
     static String Email_input3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[6]/input";
@@ -67,17 +67,18 @@ public class UiNavigationPortalpage {
 
 
     public static void enter_address_input22() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.id(address_input2)).sendKeys("Fire Shed, Gateway Theatre of Shopping, Umhlanga Ridge, Durban, KwaZulu-Natal");
         Thread.sleep(2000);
-        driver.findElement(By.xpath(address_input2)).sendKeys("Fire Shed, Gateway Theatre of Shopping, Umhlanga Ridge, Durban, KwaZulu-Natal");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(address_input)).click();
-
+        driver.findElement(By.id(address_input2)).click();
+        driver.findElement(By.xpath(address_option_two)).click();
     }
     public static void enter_address_input3() throws InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(By.xpath(address_input3)).sendKeys("Fire Shed, Gateway Theatre of Shopping, Umhlanga Ridge, Durban, KwaZulu-Natal");
+        driver.findElement(By.id(address_input3)).sendKeys("Fire Shed, Gateway Theatre of Shopping, Umhlanga Ridge, Durban, KwaZulu-Natal");
         Thread.sleep(2000);
-        driver.findElement(By.xpath(address_input)).click();
+        driver.findElement(By.id(address_input3)).click();
+        driver.findElement(By.xpath(address_option_three)).click();
     }
     public static void click_ADD_ROW_Button() throws IOException, InterruptedException {
         Thread.sleep(2000);
@@ -154,7 +155,7 @@ public class UiNavigationPortalpage {
     }
 
     public static void click_Product_Input() throws IOException, InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.findElement(By.xpath(Product_Input)).click();
         Thread.sleep(2000);
         String screenshotPath = captureScreenshot(driver);
@@ -258,7 +259,7 @@ public class UiNavigationPortalpage {
                 MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
     }
     public static void click_ORDER_SERVICES() throws IOException, InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         driver.findElement(By.xpath(ORDER_SERVICES)).click();
         Thread.sleep(2000);
         String screenshotPath = captureScreenshot(driver);
