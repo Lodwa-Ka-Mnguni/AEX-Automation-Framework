@@ -116,6 +116,7 @@ public class OpenFiberPortalChecklist {
              UiNavigationPortalpage.click_admin_tab_button();
              UiNavigationPortalpage.click_address_management_option();
              CoverageMapPortalPage.click_home_img();
+
              test.info("Add roles as needed for test scenarios");
          }
 
@@ -147,6 +148,63 @@ public class OpenFiberPortalChecklist {
              UiNavigationPortalpage.click_work_orders_button();
              CoverageMapPortalPage.click_home_img();
              test.info("BI Reports load successfully");
+
+         }
+
+         @Test(priority = 5)
+         void Create_Multiple_Accounts() throws IOException, InterruptedException {
+             test = extent.createTest("Create Multiple Accounts");
+
+             test.info("Click on SERVICES tab");
+             UiNavigationPortalpage.click_Service_tab();
+             test.info("Select ORDER SERVICES");
+             UiNavigationPortalpage.click_ORDER_SERVICES();
+             test.info("Verify Service Provider screen");
+             UiNavigationPortalpage.verify_Service_provider_header();
+             test.info("Select Service Provide");
+             UiNavigationPortalpage.click_select_service_provider();
+             UiNavigationPortalpage.click_option_one();
+             test.info("Click Submit Button");
+             UiNavigationPortalpage.click_Submit_Button_provoder();
+             test.info("Verify Service Provider Form");
+             UiNavigationPortalpage.verify_ISP_Header();
+             test.info("Enter the following details: Address, First Name, Last Name, Email, Mobile Number, ID Number, Product, Sales Agent, and Promo Code. Then verify the status");
+             UiNavigationPortalpage.click_ADD_ROW_Button();
+             UiNavigationPortalpage.click_ADD_ROW_Button();
+
+             UiNavigationPortalpage.enter_address_input();
+             UiNavigationPortalpage.enter_address_input22();
+             UiNavigationPortalpage.enter_address_input3();
+
+             UiNavigationPortalpage.enter_first_name_input();
+             UiNavigationPortalpage.enter_first_name_input2();
+             UiNavigationPortalpage.enter_first_name_input3();
+
+             UiNavigationPortalpage.enter_last_name_input();
+             UiNavigationPortalpage.enter_last_name_input2();
+             UiNavigationPortalpage.enter_last_name_input3();
+
+             UiNavigationPortalpage.enter_Email_input();
+             UiNavigationPortalpage.enter_Email_input2();
+             UiNavigationPortalpage.enter_Email_input3();
+
+             UiNavigationPortalpage.enter_mobile_number();
+             UiNavigationPortalpage.enter_mobile_number2();
+             UiNavigationPortalpage.enter_mobile_number3();
+
+             UiNavigationPortalpage.enter_Id_Number();
+             UiNavigationPortalpage.enter_Id_Number2();
+             UiNavigationPortalpage.enter_Id_Number3();
+
+             UiNavigationPortalpage.click_Product_Input();
+             UiNavigationPortalpage.click_product_option_one();
+             UiNavigationPortalpage.click_Product_Input2();
+             UiNavigationPortalpage.click_product_option_two();
+             UiNavigationPortalpage.click_Product_Input3();
+             UiNavigationPortalpage.click_prodct_option_three();
+
+             UiNavigationPortalpage.verify_ISP_Header();
+
 
          }
 
