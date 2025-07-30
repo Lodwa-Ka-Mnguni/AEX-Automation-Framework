@@ -1,4 +1,4 @@
-package HyperFiberPortalPages;
+package OpenFiberPortalPages;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;

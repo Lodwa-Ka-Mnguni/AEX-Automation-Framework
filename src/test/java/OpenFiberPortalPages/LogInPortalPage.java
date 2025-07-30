@@ -1,4 +1,4 @@
-package HyperFiberPortalPages;
+package OpenFiberPortalPages;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
@@ -7,7 +7,9 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-import static Tests.HyperFiberPortalTest.*;
+import static Tests.OpenFiberPortalChecklist.captureScreenshot;
+import static Tests.OpenFiberPortalChecklist.driver;
+import static Tests.OpenFiberPortalChecklist.test;
 
 public class LogInPortalPage {
     // Locators

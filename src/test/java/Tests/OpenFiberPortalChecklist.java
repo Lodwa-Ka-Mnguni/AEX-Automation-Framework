@@ -1,6 +1,6 @@
 package Tests;
 
-import HyperFiberPortalPages.*;
+import OpenFiberPortalPages.*;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -103,9 +103,7 @@ public class OpenFiberPortalChecklist {
             LogInPortalPage.enter_password();
             LogInPortalPage.click_login();
 
-            test.info("Password Reset to check that e" +
-                    "" +
-                    "mails are being sent and delivered");
+            test.info("Password Reset to check that mails are being sent and delivered");
         }
 
          @Test(priority = 3)
@@ -204,8 +202,6 @@ public class OpenFiberPortalChecklist {
              UiNavigationPortalpage.click_prodct_option_three();
 
              UiNavigationPortalpage.verify_ISP_Header();
-
-
          }
 
         @AfterSuite
