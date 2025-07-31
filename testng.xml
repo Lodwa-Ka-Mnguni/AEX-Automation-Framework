@@ -7,6 +7,7 @@
             <class name="Tests.OpenFiberPortalChecklist"/>
             <class name="Tests.Retool_NetworkSolutionApp_Test"/>
             <class name="Tests.HyperFiberPortalTest"/>
+            <class name="Tests.ZoomFiberPortalTest"/>
         </classes>
     </test>
 </suite>

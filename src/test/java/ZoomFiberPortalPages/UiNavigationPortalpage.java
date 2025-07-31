@@ -1,4 +1,4 @@
-package OpenFiberPortalPages;
+package ZoomFiberPortalPages;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
@@ -7,8 +7,8 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-import static Tests.OpenFiberPortalChecklist.*;
-import static Tests.OpenFiberPortalChecklist.test;
+import static Tests.ZoomFiberPortalTest.driver;
+import static Tests.ZoomFiberPortalTest.*;
 
 public class UiNavigationPortalpage {
 
@@ -21,17 +21,16 @@ public class UiNavigationPortalpage {
     static String search_serial_button ="//*[@id=\"btnSearch\"]";
     static String reports_tab ="/html/body/div[3]/header/div/div/div[2]/ul/li[9]/a";
     static String reports_overview_option ="//a[normalize-space()='Overview']";
-    static String admin_tabs = "/html/body/div[3]/header/div/div/div[2]/ul/li[6]/a";
-    static String address_management_op = "/html/body/div[3]/header/div/div/div[2]/ul/li[6]/ul/li[8]/a";
-    static String Service_tab = "/html/body/div[3]/header/div/div/div[2]/ul/li[4]/a";
-    static String Dashboard_option = "/html/body/div[3]/header/div/div/div[2]/ul/li[4]/ul/li[2]/a";
+    static String admin_tabs = "/html/body/div[3]/div/div[2]/ul/li[5]/a";
+    static String address_management_op = "/html/body/div[3]/div/div[2]/ul/li[5]/ul/li[10]/a";
+    static String Service_tab = "/html/body/div[3]/div/div[2]/ul/li[3]/a";
+    static String Dashboard_option = "/html/body/div[3]/div/div[2]/ul/li[3]/ul/li[2]/a";
     static String Service_dashdoard_header = "/html/body/div[4]/div/div/div/header/h1";
     static String summary_accordion_element = "//*[@id=\"ui-id-1\"]";
-    static String metacom_accordion_element = "//*[@id=\"ui-id-3\"]";
-    static String reflexISP_accordion_element ="//*[@id=\"ui-id-5\"]";
-    static String ORDER_SERVICES ="/html/body/div[3]/header/div/div/div[2]/ul/li[4]/ul/li[3]/a";
+    static String home_connect_accordion_element = "//*[@id=\"ui-id-3\"]";
+    static String ADD_SERVICES ="//a[@title='Add Service/s']";
     static String select_service_provider ="//*[@id=\"ServiceProvider\"]";
-    static String option_one ="//*[@id=\"ServiceProvider\"]/option[2]";
+    static String option_one ="//*[@id=\"ServiceProvider\"]/option[3]";
     static String Submit_Button_provoder ="//*[@id=\"btnSubmit\"]";
     static String address_input ="//*[@id=\"PredefinedPremise0\"]";
     static String address_input2 ="PredefinedPremise1";
@@ -45,9 +44,9 @@ public class UiNavigationPortalpage {
     static String mobile_number ="//*[@id=\"dataTable\"]/tbody/tr/td[7]/input";
     static String mobile_number2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[7]/input";
     static String mobile_number3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[7]/input";
-    static String Id_Number ="//*[@id=\"dataTable\"]/tbody/tr[1]/td[11]/input";
-    static String Id_Number2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[11]/input";
-    static String Id_Number3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[11]/input";
+    static String Id_Number ="//*[@id=\"dataTable\"]/tbody/tr/td[8]/input";
+    static String Id_Number2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[8]/input";
+    static String Id_Number3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[8]/input";
     static String Product_Input ="//*[@id=\"ProductId0\"]";
     static String Product_Input2 ="//*[@id=\"ProductId1\"]";
     static String Product_Input3 ="//*[@id=\"ProductId2\"]";
@@ -63,18 +62,188 @@ public class UiNavigationPortalpage {
     static String address_option_one ="/html[1]/body[1]/ul[1]/li[2]";
     static String address_option_two ="/html[1]/body[1]/ul[2]/li[1]";
     static String address_option_three ="/html[1]/body[1]/ul[3]/li[3]";
+    static String home_img = "/html/body/div[3]/div/div[1]/a/img";
+    static String promo_and_discount = "/html/body/div[3]/header/div/div/div[2]/ul/li[4]/ul/li[11]/a";
+    static String promotions_header = "/html/body/div[3]/header/div/div/div[2]/ul/li[1]/a";
+    static String Preferred_Contact_Method_input ="//*[@id=\"showPreferred\"]/select";
+    static String Preferred_Contact_Method_input2 ="//*[@id=\"showPreferred\"]/select";
+    static String Preferred_Contact_Method_input3 ="//*[@id=\"showPreferred\"]/select";
+    static String Preferred_Contact_Method_option ="//*[@id=\"showPreferred\"]/select/option[2]";
+    static String Preferred_Contact_Method_option2 ="//*[@id=\"showPreferred\"]/select/option[3]";
+    static String Preferred_Contact_Method_option3="//*[@id=\"showPreferred\"]/select/option[4]";
+    static String Preferred_Contact_Time_input ="//*[@id=\"showPreferredTime\"]/select";
+    static String Preferred_Contact_Time_input2 ="//*[@id=\"showPreferredTime\"]/select";
+    static String Preferred_Contact_Time_input3 ="//*[@id=\"showPreferredTime\"]/select";
+    static String Preferred_Contact_Time_option ="//*[@id=\"showPreferredTime\"]/select/option[2]";
+    static String Preferred_Contact_Time_option2 ="//*[@id=\"showPreferredTime\"]/select/option[3]";
+    static String Preferred_Contact_Time_option3 ="//*[@id=\"showPreferredTime\"]/select/option[4]";
+    static String Alternative_Number ="//*[@id=\"dataTable\"]/tbody/tr[1]/td[8]/input";
+    static String Alternative_Number2 ="/html/body/div[4]/div/form/div[2]/table/tbody/tr[2]/td[8]/input";
+    static String Alternative_Number3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[8]/input";
 
+    public static void enter_Alternative_Number() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Alternative_Number)).sendKeys("0000000001");
+    }
+    public static void enter_Alternative_Number2() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Alternative_Number2)).sendKeys("0000010002");
+    }
+    public static void enter_Alternative_Number3() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Alternative_Number3)).sendKeys("0020000003");
+    }
 
+    public static void click_Preferred_Contact_Time_option() throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.xpath(Preferred_Contact_Time_option)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+    public static void click_Preferred_Contact_Time_option2() throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.xpath(Preferred_Contact_Time_option2)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+
+    public static void click_Preferred_Contact_Time_option3() throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.xpath(Preferred_Contact_Time_option3)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+
+    public static void click_Preferred_Contact_Time_input() throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.xpath(Preferred_Contact_Time_input)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+    public static void click_Preferred_Contact_Time_input2() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Preferred_Contact_Time_input2)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+    public static void click_Preferred_Contact_Time_input3() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Preferred_Contact_Time_input3)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+    public static void click_Preferred_Contact_Method_option() throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.xpath(Preferred_Contact_Method_option)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+    public static void click_Preferred_Contact_Method_option2() throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.xpath(Preferred_Contact_Method_option2)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+
+    public static void click_Preferred_Contact_Method_option3() throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.xpath(Preferred_Contact_Method_option3)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+
+    public static void click_Preferred_Contact_Method_input() throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.xpath(Preferred_Contact_Method_input)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+    public static void click_Preferred_Contact_Method_input2() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Preferred_Contact_Method_input2)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+    public static void click_Preferred_Contact_Method_input3() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Preferred_Contact_Method_input3)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+    public static void enter_Id_Number() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Id_Number)).sendKeys("911211588802");
+    }
+    public static void enter_Id_Number2() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Id_Number2)).sendKeys("921211588802");
+    }
+    public static void enter_Id_Number3() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Id_Number3)).sendKeys("931211588802");
+    }
+    public static void verify_promotions_header() throws IOException, InterruptedException {
+        Thread.sleep(15000);
+        String expectedTitlePromotion = "MANAGE";
+        String actualTitlePromotion = driver.findElement(By.xpath(promotions_header)).getText();
+        Assert.assertEquals(actualTitlePromotion, expectedTitlePromotion);
+        String screenshotPath = captureScreenshot(driver);
+        if (expectedTitlePromotion.equals(actualTitlePromotion)) {
+            test.log(Status.PASS, "Promotions Layout:");
+            test.pass("Actual Result",
+                    MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+        } else {
+            test.log(Status.FAIL, "Landing page title mismatch. Expected: " + expectedTitlePromotion + " but found: " + actualTitlePromotion);
+            test.fail("Failure Screenshot",
+                    MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+        }
+    }
+    public static void click_promo_and_discount() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(promo_and_discount)).click();
+        Thread.sleep(2000);
+        String screenshotPath = captureScreenshot(driver);
+        test.pass("Actual Result",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    }
+    public static void click_home_img() throws InterruptedException, IOException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(home_img)).click();
+    }
     public static void enter_address_input22() throws InterruptedException {
         Thread.sleep(3000);
-        driver.findElement(By.id(address_input2)).sendKeys("Fire Shed, Gateway Theatre of Shopping, Umhlanga Ridge, Durban, KwaZulu-Natal");
+        driver.findElement(By.id(address_input2)).sendKeys("3456, Sandpiper Drive, Charlotte, Punta Gorda, USA, 33950, Florida");
         Thread.sleep(2000);
         driver.findElement(By.id(address_input2)).click();
         driver.findElement(By.xpath(address_option_two)).click();
     }
     public static void enter_address_input3() throws InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(By.id(address_input3)).sendKeys("Fire Shed, Gateway Theatre of Shopping, Umhlanga Ridge, Durban, KwaZulu-Natal");
+        driver.findElement(By.id(address_input3)).sendKeys("2402, 2001, Bal Harbor Boulevard, Charlotte, Punta Gorda, USA, 33950, Florida");
         Thread.sleep(2000);
         driver.findElement(By.id(address_input3)).click();
         driver.findElement(By.xpath(address_option_three)).click();
@@ -113,7 +282,7 @@ public class UiNavigationPortalpage {
     }
     public static void verify_ISP_Header() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        String expectedTitleISPH = "Accelerit";
+        String expectedTitleISPH = "Active Fibre";
         String actualTitleISPH = driver.findElement(By.xpath(ISP_Header)).getText();
         Assert.assertEquals(actualTitleISPH, expectedTitleISPH);
         String screenshotPath = captureScreenshot(driver);
@@ -177,21 +346,9 @@ public class UiNavigationPortalpage {
         test.pass("Actual Result",
                 MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
     }
-    public static void enter_Id_Number() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.findElement(By.xpath(Id_Number)).sendKeys("911211588802");
-    }
-    public static void enter_Id_Number2() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.findElement(By.xpath(Id_Number2)).sendKeys("921211588802");
-    }
-    public static void enter_Id_Number3() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.findElement(By.xpath(Id_Number3)).sendKeys("931211588802");
-    }
     public static void enter_address_input() throws InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(By.xpath(address_input)).sendKeys("Toy Kingdom, Gateway Theatre of Shopping, Umhlanga Ridge, Durban, KwaZulu-Natal");
+        driver.findElement(By.xpath(address_input)).sendKeys("612, 2000, Bal Harbor Boulevard, Punta Gorda, USA, 33950, Florida, Old Data");
         Thread.sleep(2000);
         driver.findElement(By.xpath(address_input)).click();
         driver.findElement(By.xpath(address_option_one)).click();
@@ -257,9 +414,9 @@ public class UiNavigationPortalpage {
         test.pass("Actual Result",
                 MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
     }
-    public static void click_ORDER_SERVICES() throws IOException, InterruptedException {
+    public static void click_ADD_SERVICES() throws IOException, InterruptedException {
         Thread.sleep(10000);
-        driver.findElement(By.xpath(ORDER_SERVICES)).click();
+        driver.findElement(By.xpath(ADD_SERVICES)).click();
         Thread.sleep(2000);
         String screenshotPath = captureScreenshot(driver);
         test.pass("Actual Result",
@@ -345,14 +502,14 @@ public class UiNavigationPortalpage {
                     MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         }
     }
-    public static void verify_metacom_accordion_element() throws IOException, InterruptedException {
+    public static void verify_hyperfiber_accordion_element() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        String expectedTitleMAP = "Metacom";
-        String actualTitleMAP = driver.findElement(By.xpath(metacom_accordion_element)).getText();
+        String expectedTitleMAP = "Home-Connect";
+        String actualTitleMAP = driver.findElement(By.xpath(home_connect_accordion_element)).getText();
         Assert.assertEquals(actualTitleMAP, expectedTitleMAP);
         String screenshotPath = captureScreenshot(driver);
         if (expectedTitleMAP.equals(actualTitleMAP)) {
-            test.log(Status.PASS, "Verify the metacom accordion element and the count bubbles.");
+            test.log(Status.PASS, "Verify the Hyperfiber accordion element and the count bubbles.");
             test.pass("Actual Result",
                     MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         } else {
@@ -362,22 +519,6 @@ public class UiNavigationPortalpage {
         }
     }
 
-    public static void verify_reflexISP_accordion_element() throws IOException, InterruptedException {
-        Thread.sleep(2000);
-        String expectedTitleMAP = "Service Dashboard";
-        String actualTitleMAP = driver.findElement(By.xpath(Service_dashdoard_header)).getText();
-        Assert.assertEquals(actualTitleMAP, expectedTitleMAP);
-        String screenshotPath = captureScreenshot(driver);
-        if (expectedTitleMAP.equals(actualTitleMAP)) {
-            test.log(Status.PASS, "Verify the reflex ISP accordion element and the count bubbles.");
-            test.pass("Actual Result",
-                    MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-        } else {
-            test.log(Status.FAIL, "Landing page title mismatch. Expected: " + expectedTitleMAP + " but found: " + actualTitleMAP);
-            test.fail("Failure Screenshot",
-                    MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-        }
-    }
     public static void click_Service_tab() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Service_tab)).click();
@@ -396,16 +537,13 @@ public class UiNavigationPortalpage {
                 MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
     }
 
-    public static void click_metacom_accordion_element() throws IOException, InterruptedException {
+    public static void click_hyperfiber_accordion_element() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(By.xpath(metacom_accordion_element)).click();
+        driver.findElement(By.xpath(home_connect_accordion_element)).click();
     }
     public static void click_summary_accordion_element() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(summary_accordion_element)).click();
     }
-    public static void click_reflexISP_accordion_element() throws IOException, InterruptedException {
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(reflexISP_accordion_element)).click();
-    }
+
 }
