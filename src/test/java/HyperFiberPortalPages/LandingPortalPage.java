@@ -15,7 +15,7 @@ import static Tests.HyperFiberPortalTest.*;
 
 public class LandingPortalPage {
     // Locators
-    public static String home_Title = "/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-landing[1]/div[1]/div[1]/div[1]/div[1]/h5[1]";
+    public static String home_Title = "/html/body/div[4]/div/div/div/header/h1";
     public static String shop_front_button = "/html/body/div[4]/div/div/div/div[2]/div[1]/p/a";
     public static String check_coverage_button = "/html/body/div[4]/div/div/div/div[2]/div[2]/p/a";
     public static String coverage_map_title = "/html/body/div[4]/div[1]/div[1]/h3";
@@ -23,8 +23,8 @@ public class LandingPortalPage {
 
     // Actions
     public static void verify_homeOP_page() throws IOException, InterruptedException {
-        Thread.sleep(10000);
-        String expectedTitleHF = "Have an account";
+        Thread.sleep(11000);
+        String expectedTitleHF = "HyperFiber Portal";
         String actualTitleHF = driver.findElement(By.xpath(home_Title)).getText();
         Assert.assertEquals(actualTitleHF,expectedTitleHF);
         String screenshotPath = captureScreenshot(driver);
@@ -58,7 +58,7 @@ public class LandingPortalPage {
 
 
     @SneakyThrows
-    public  static void verify_check_coverage_button(){
+    public  static void verify_check_coverage_button() throws IOException {
         String expectedTitleCOF = "COVERAGE & PRODUCTS";
         String actualTitleCOF = driver.findElement(By.xpath(check_coverage_button)).getText();
         Assert.assertEquals(actualTitleCOF,expectedTitleCOF);
