@@ -1,8 +1,8 @@
 package Tests;
 
-import HyperFiberPortalPages.LandingPortalPage;
-import HyperFiberPortalPages.LogInPortalPage;
-import HyperFiberPortalPages.UiNavigationPortalpage;
+import EvotelPortalPages.LandingPortalPage;
+import EvotelPortalPages.LogInPortalPage;
+import EvotelPortalPages.UiNavigationPortalpage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -20,7 +20,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class HyperFiberPortalTest {
+public class EvotelPortalTest {
     public static WebDriver driver;
     public static ExtentReports extent = new ExtentReports();
     public static ExtentTest test;
@@ -28,17 +28,18 @@ public class HyperFiberPortalTest {
     @BeforeSuite
     public static void Setup() throws IOException, InterruptedException {
         driver = new ChromeDriver();
-        driver.get("https://preprod.hyperfiber.dev.aex.systems/");
+        driver.get("https://preprod.evotel.dev.aex.systems/");
 
-        ExtentSparkReporter spark = new ExtentSparkReporter("target/HyperFiberPortal.html");
+        ExtentSparkReporter spark = new ExtentSparkReporter("target/EvotelPortal.html");
         spark.loadXMLConfig(new File("extent-config.xml"));
         extent.attachReporter(spark);
 
 
 
+
         driver.manage().window().maximize();
         test = extent.createTest("General System Health", "User is presented with  the landing page");
-        LandingPortalPage.verify_homeOP_page();
+        LandingPortalPage.verify_home_page();
 
 
     }
@@ -96,6 +97,8 @@ public class HyperFiberPortalTest {
         UiNavigationPortalpage.click_admin_tab_button();
         UiNavigationPortalpage.click_address_management_option();
         UiNavigationPortalpage.click_home_img();
+        UiNavigationPortalpage.click_manage_account();
+        UiNavigationPortalpage.verify_Manage_Account();
 
         test.info("Add roles as needed for test scenarios");
     }
@@ -110,9 +113,12 @@ public class HyperFiberPortalTest {
         test.info("Dashboards load for all user roles");
         UiNavigationPortalpage.click_admin_tab_button();
         UiNavigationPortalpage.click_home_img();
+        UiNavigationPortalpage.click_manage_account();
+        UiNavigationPortalpage.verify_Manage_Account();
         test.info("Service Status widgets/components render as expected");
         UiNavigationPortalpage.click_search_service_button();
         UiNavigationPortalpage.click_home_img();
+        UiNavigationPortalpage.click_manage_account();
 
         UiNavigationPortalpage.click_Service_tab();
         UiNavigationPortalpage.click_Dashboard_option();
@@ -122,10 +128,14 @@ public class HyperFiberPortalTest {
         UiNavigationPortalpage.verify_hyperfiber_accordion_element();
 
         UiNavigationPortalpage.click_home_img();
+        UiNavigationPortalpage.click_manage_account();
+        UiNavigationPortalpage.verify_Manage_Account();
 
         test.info("Work Order History is visible and complete");
         UiNavigationPortalpage.click_work_orders_button();
         UiNavigationPortalpage.click_home_img();
+        UiNavigationPortalpage.click_manage_account();
+        UiNavigationPortalpage.verify_Manage_Account();
         test.info("BI Reports load successfully");
 
     }
@@ -171,6 +181,29 @@ public class HyperFiberPortalTest {
         UiNavigationPortalpage.enter_mobile_number2();
         UiNavigationPortalpage.enter_mobile_number3();
 
+//        UiNavigationPortalpage.enter_Alternative_Number();
+//        UiNavigationPortalpage.enter_Alternative_Number2();
+//        UiNavigationPortalpage.enter_Alternative_Number3();
+
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_input();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_option();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_input2();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_option2();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_input3();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_option3();
+
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_input();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_option();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_input2();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_option2();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_input3();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_option3();
+
+
+//        UiNavigationPortalpage.enter_Id_Number();
+//        UiNavigationPortalpage.enter_Id_Number2();
+//        UiNavigationPortalpage.enter_Id_Number3();
+
         UiNavigationPortalpage.click_Product_Input();
         UiNavigationPortalpage.click_product_option_one();
         UiNavigationPortalpage.click_Product_Input2();
@@ -181,15 +214,15 @@ public class HyperFiberPortalTest {
         UiNavigationPortalpage.verify_ISP_Header();
 
     }
-    @Test(priority = 5)
-    void Promo_And_Discount() throws IOException, InterruptedException {
-        test = extent.createTest("Promo and Discount");
-        UiNavigationPortalpage.click_admin_tab_button();
-        UiNavigationPortalpage.click_promo_and_discount();
-        test.info("Verify Layout of Promotion Overview page");
-        UiNavigationPortalpage.verify_promotions_header();
-
-    }
+//    @Test(priority = 5)
+//    void Promo_And_Discount() throws IOException, InterruptedException {
+//        test = extent.createTest("Promo and Discount");
+//        UiNavigationPortalpage.click_admin_tab_button();
+//        UiNavigationPortalpage.click_promo_and_discount();
+//        test.info("Verify Layout of Promotion Overview page");
+//        UiNavigationPortalpage.verify_promotions_header();
+//
+//    }
 
     @AfterSuite
     public static void cleanup() {
@@ -198,6 +231,4 @@ public class HyperFiberPortalTest {
             driver.quit();
         }
     }
-
-
 }

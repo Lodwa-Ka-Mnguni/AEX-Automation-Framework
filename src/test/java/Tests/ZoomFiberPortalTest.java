@@ -30,7 +30,7 @@ public class ZoomFiberPortalTest {
         driver = new ChromeDriver();
         driver.get("https://preprod.zoomfibre.dev.aex.systems/");
 
-        ExtentSparkReporter spark = new ExtentSparkReporter("target/RippleFiberPortal.html");
+        ExtentSparkReporter spark = new ExtentSparkReporter("target/ZoomFiberPortal.html");
         spark.loadXMLConfig(new File("extent-config.xml"));
         extent.attachReporter(spark);
 

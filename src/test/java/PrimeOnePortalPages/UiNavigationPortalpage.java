@@ -1,4 +1,4 @@
-package HyperFiberPortalPages;
+package PrimeOnePortalPages;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
@@ -7,8 +7,7 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-import static Tests.HyperFiberPortalTest.*;
-import static Tests.HyperFiberPortalTest.driver;
+import static Tests.PrimeOnePortalTest.*;
 
 public class UiNavigationPortalpage {
 

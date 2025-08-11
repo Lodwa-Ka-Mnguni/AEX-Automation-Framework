@@ -8,6 +8,8 @@
             <class name="Tests.Retool_NetworkSolutionApp_Test"/>
             <class name="Tests.HyperFiberPortalTest"/>
             <class name="Tests.ZoomFiberPortalTest"/>
+            <class name="Tests.PrimeOnePortalTest"/>
+            <class name="Tests.EvotelPortalTest"/>
         </classes>
     </test>
 </suite>
