@@ -346,7 +346,7 @@ public class UiNavigationPortalpage {
                 MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
     }
     public static void enter_address_input() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.xpath(address_input)).sendKeys("612, 2000, Bal Harbor Boulevard, Punta Gorda, USA, 33950, Florida, Old Data");
         Thread.sleep(2000);
         driver.findElement(By.xpath(address_input)).click();
