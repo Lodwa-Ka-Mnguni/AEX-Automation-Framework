@@ -10,6 +10,7 @@
             <class name="Tests.ZoomFiberPortalTest"/>
             <class name="Tests.PrimeOnePortalTest"/>
             <class name="Tests.EvotelPortalTest"/>
+            <class name="Tests.PTZambiaPortalTest"/>
         </classes>
     </test>
 </suite>

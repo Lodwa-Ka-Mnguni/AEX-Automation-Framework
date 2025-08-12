@@ -1,8 +1,8 @@
 package Tests;
 
-import HyperFiberPortalPages.LandingPortalPage;
-import HyperFiberPortalPages.LogInPortalPage;
-import HyperFiberPortalPages.UiNavigationPortalpage;
+import PTZambiaPortalPages.LandingPortalPage;
+import PTZambiaPortalPages.LogInPortalPage;
+import PTZambiaPortalPages.UiNavigationPortalpage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -20,7 +20,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class HyperFiberPortalTest {
+public class PTZambiaPortalTest {
     public static WebDriver driver;
     public static ExtentReports extent = new ExtentReports();
     public static ExtentTest test;
@@ -28,17 +28,18 @@ public class HyperFiberPortalTest {
     @BeforeSuite
     public static void Setup() throws IOException, InterruptedException {
         driver = new ChromeDriver();
-        driver.get("https://preprod.hyperfiber.dev.aex.systems/");
+        driver.get("https://preprod.ptzambia.dev.aex.systems/");
 
-        ExtentSparkReporter spark = new ExtentSparkReporter("target/HyperFiberPortal.html");
+        ExtentSparkReporter spark = new ExtentSparkReporter("target/ZoomFiberPortal.html");
         spark.loadXMLConfig(new File("extent-config.xml"));
         extent.attachReporter(spark);
 
 
 
+
         driver.manage().window().maximize();
         test = extent.createTest("General System Health", "User is presented with  the landing page");
-        LandingPortalPage.verify_homeOP_page();
+        LandingPortalPage.verify_home_page();
 
 
     }
@@ -152,41 +153,67 @@ public class HyperFiberPortalTest {
         UiNavigationPortalpage.click_ADD_ROW_Button();
 
         UiNavigationPortalpage.enter_address_input();
+        UiNavigationPortalpage.enter_address_input22();
+        UiNavigationPortalpage.enter_address_input3();
+
         UiNavigationPortalpage.enter_first_name_input();
+        UiNavigationPortalpage.enter_first_name_input2();
+        UiNavigationPortalpage.enter_first_name_input3();
+
         UiNavigationPortalpage.enter_last_name_input();
+        UiNavigationPortalpage.enter_last_name_input2();
+        UiNavigationPortalpage.enter_last_name_input3();
+
         UiNavigationPortalpage.enter_Email_input();
+        UiNavigationPortalpage.enter_Email_input2();
+        UiNavigationPortalpage.enter_Email_input3();
+
         UiNavigationPortalpage.enter_mobile_number();
+        UiNavigationPortalpage.enter_mobile_number2();
+        UiNavigationPortalpage.enter_mobile_number3();
+
+        UiNavigationPortalpage.enter_Alternative_Number();
+        UiNavigationPortalpage.enter_Alternative_Number2();
+        UiNavigationPortalpage.enter_Alternative_Number3();
+
+        UiNavigationPortalpage.click_Preferred_Contact_Method_input();
+        UiNavigationPortalpage.click_Preferred_Contact_Method_option();
+        UiNavigationPortalpage.click_Preferred_Contact_Method_input2();
+        UiNavigationPortalpage.click_Preferred_Contact_Method_option2();
+        UiNavigationPortalpage.click_Preferred_Contact_Method_input3();
+        UiNavigationPortalpage.click_Preferred_Contact_Method_option3();
+
+        UiNavigationPortalpage.click_Preferred_Contact_Time_input();
+        UiNavigationPortalpage.click_Preferred_Contact_Time_option();
+        UiNavigationPortalpage.click_Preferred_Contact_Time_input2();
+        UiNavigationPortalpage.click_Preferred_Contact_Time_option2();
+        UiNavigationPortalpage.click_Preferred_Contact_Time_input3();
+        UiNavigationPortalpage.click_Preferred_Contact_Time_option3();
+
+
+        UiNavigationPortalpage.enter_Id_Number();
+        UiNavigationPortalpage.enter_Id_Number2();
+        UiNavigationPortalpage.enter_Id_Number3();
+
         UiNavigationPortalpage.click_Product_Input();
         UiNavigationPortalpage.click_product_option_one();
-
-        UiNavigationPortalpage.enter_address_input22();
-        UiNavigationPortalpage.enter_first_name_input2();
-        UiNavigationPortalpage.enter_last_name_input2();
-        UiNavigationPortalpage.enter_Email_input2();
-        UiNavigationPortalpage.enter_mobile_number2();
         UiNavigationPortalpage.click_Product_Input2();
         UiNavigationPortalpage.click_product_option_two();
-
-        UiNavigationPortalpage.enter_address_input3();
-        UiNavigationPortalpage.enter_first_name_input3();
-        UiNavigationPortalpage.enter_last_name_input3();
-        UiNavigationPortalpage.enter_Email_input3();
-        UiNavigationPortalpage.enter_mobile_number3();
         UiNavigationPortalpage.click_Product_Input3();
         UiNavigationPortalpage.click_prodct_option_three();
 
         UiNavigationPortalpage.verify_ISP_Header();
 
     }
-    @Test(priority = 5)
-    void Promo_And_Discount() throws IOException, InterruptedException {
-        test = extent.createTest("Promo and Discount");
-        UiNavigationPortalpage.click_admin_tab_button();
-        UiNavigationPortalpage.click_promo_and_discount();
-        test.info("Verify Layout of Promotion Overview page");
-        UiNavigationPortalpage.verify_promotions_header();
-
-    }
+//    @Test(priority = 5)
+//    void Promo_And_Discount() throws IOException, InterruptedException {
+//        test = extent.createTest("Promo and Discount");
+//        UiNavigationPortalpage.click_admin_tab_button();
+//        UiNavigationPortalpage.click_promo_and_discount();
+//        test.info("Verify Layout of Promotion Overview page");
+//        UiNavigationPortalpage.verify_promotions_header();
+//
+//    }
 
     @AfterSuite
     public static void cleanup() {
