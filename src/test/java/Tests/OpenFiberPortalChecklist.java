@@ -171,33 +171,29 @@ public class OpenFiberPortalChecklist {
              UiNavigationPortalpage.click_ADD_ROW_Button();
 
              UiNavigationPortalpage.enter_address_input();
-             UiNavigationPortalpage.enter_address_input22();
-             UiNavigationPortalpage.enter_address_input3();
-
              UiNavigationPortalpage.enter_first_name_input();
-             UiNavigationPortalpage.enter_first_name_input2();
-             UiNavigationPortalpage.enter_first_name_input3();
-
              UiNavigationPortalpage.enter_last_name_input();
-             UiNavigationPortalpage.enter_last_name_input2();
-             UiNavigationPortalpage.enter_last_name_input3();
-
              UiNavigationPortalpage.enter_Email_input();
-             UiNavigationPortalpage.enter_Email_input2();
-             UiNavigationPortalpage.enter_Email_input3();
-
              UiNavigationPortalpage.enter_mobile_number();
-             UiNavigationPortalpage.enter_mobile_number2();
-             UiNavigationPortalpage.enter_mobile_number3();
-
              UiNavigationPortalpage.enter_Id_Number();
-             UiNavigationPortalpage.enter_Id_Number2();
-             UiNavigationPortalpage.enter_Id_Number3();
-
              UiNavigationPortalpage.click_Product_Input();
              UiNavigationPortalpage.click_product_option_one();
+
+             UiNavigationPortalpage.enter_address_input22();
+             UiNavigationPortalpage.enter_first_name_input2();
+             UiNavigationPortalpage.enter_last_name_input2();
+             UiNavigationPortalpage.enter_Email_input2();
+             UiNavigationPortalpage.enter_mobile_number2();
+             UiNavigationPortalpage.enter_Id_Number2();
              UiNavigationPortalpage.click_Product_Input2();
              UiNavigationPortalpage.click_product_option_two();
+
+             UiNavigationPortalpage.enter_address_input3();
+             UiNavigationPortalpage.enter_first_name_input3();
+             UiNavigationPortalpage.enter_last_name_input3();
+             UiNavigationPortalpage.enter_Email_input3();
+             UiNavigationPortalpage.enter_mobile_number3();
+             UiNavigationPortalpage.enter_Id_Number3();
              UiNavigationPortalpage.click_Product_Input3();
              UiNavigationPortalpage.click_prodct_option_three();
 

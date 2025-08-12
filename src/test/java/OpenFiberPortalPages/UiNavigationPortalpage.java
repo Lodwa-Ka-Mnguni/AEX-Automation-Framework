@@ -258,7 +258,7 @@ public class UiNavigationPortalpage {
                 MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
     }
     public static void click_ORDER_SERVICES() throws IOException, InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(11000);
         driver.findElement(By.xpath(ORDER_SERVICES)).click();
         Thread.sleep(2000);
         String screenshotPath = captureScreenshot(driver);
