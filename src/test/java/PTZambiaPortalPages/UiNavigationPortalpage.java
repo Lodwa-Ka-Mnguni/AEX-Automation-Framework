@@ -3,6 +3,7 @@ package PTZambiaPortalPages;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class UiNavigationPortalpage {
     static String home_connect_accordion_element = "//*[@id=\"ui-id-3\"]";
     static String ADD_SERVICES ="//a[@title='Add Bulk Accounts']";
     static String select_service_provider ="//*[@id=\"ServiceProvider\"]";
-    static String option_one ="//*[@id=\"ServiceProvider\"]/option[3]";
+    static String option_one ="//*[@id=\"ServiceProvider\"]/option[5]";
     static String Submit_Button_provoder ="//*[@id=\"btnSubmit\"]";
     static String address_input ="//*[@id=\"Address0\"]";
     static String address_input2 ="Address1";
@@ -49,18 +50,18 @@ public class UiNavigationPortalpage {
     static String Product_Input ="//*[@id=\"ProductId0\"]";
     static String Product_Input2 ="//*[@id=\"ProductId1\"]";
     static String Product_Input3 ="//*[@id=\"ProductId2\"]";
-    static String product_option_one ="//*[@id=\"ProductId0\"]/option[2]";
+    static String product_option_one ="//*[@id=\"ProductId0\"]/option[4]";
     static String product_option_two ="//*[@id=\"ProductId1\"]/option[4]";
     static String prodct_option_three ="//*[@id=\"ProductId2\"]/option[5]";
-    static String Email_input ="//input[@name='[0].PhoneNumber']";
+    static String Email_input ="//*[@id=\"dataTable\"]/tbody/tr[1]/td[7]/input";
     static String Email_input2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[6]/input";
     static String Email_input3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[6]/input";
     static String ISP_Header ="/html/body/div[4]/div/div/div/form/div/div/span";
     static String Service_provider_header ="/html/body/div[4]/div/div/div/form/div/div[1]/span";
     static String ADD_ROW_Button ="//a[@id='addMore']";
-    static String address_option_one ="/html[1]/body[1]/ul[1]/li[2]";
-    static String address_option_two ="/html[1]/body[1]/ul[2]/li[1]";
-    static String address_option_three ="/html[1]/body[1]/ul[3]/li[3]";
+    static String address_option_one ="//body/div[@class='wide-content-padding']/div[@class='form-horizontal form-top-padding']/form[1]";
+    static String address_option_two ="//body/div[@class='wide-content-padding']/div[@class='form-horizontal form-top-padding']/form[1]";
+    static String address_option_three ="//body/div[@class='wide-content-padding']/div[@class='form-horizontal form-top-padding']/form[1]";
     static String home_img = "/html/body/div[3]/div/div[1]/a/img";
     static String promo_and_discount = "/html/body/div[3]/header/div/div/div[2]/ul/li[4]/ul/li[11]/a";
     static String promotions_header = "/html/body/div[3]/header/div/div/div[2]/ul/li[1]/a";
@@ -235,17 +236,17 @@ public class UiNavigationPortalpage {
     }
     public static void enter_address_input22() throws InterruptedException {
         Thread.sleep(3000);
-        driver.findElement(By.id(address_input2)).sendKeys("3456, Sandpiper Drive, Charlotte, Punta Gorda, USA, 33950, Florida");
+        driver.findElement(By.id(address_input2)).sendKeys("2200 Harry Mwaanga Nakambula Road, Lusaka, Zambia");
         Thread.sleep(2000);
-        driver.findElement(By.id(address_input2)).click();
-        driver.findElement(By.xpath(address_option_two)).click();
+        driver.findElement(By.id(address_input2)).sendKeys(Keys.ARROW_DOWN);
+        driver.findElement(By.id(address_input2)).sendKeys(Keys.ENTER);
     }
     public static void enter_address_input3() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.findElement(By.id(address_input3)).sendKeys("1 Chungu Street, Lusaka, Zambia");
         Thread.sleep(2000);
-        driver.findElement(By.id(address_input3)).sendKeys("2402, 2001, Bal Harbor Boulevard, Charlotte, Punta Gorda, USA, 33950, Florida");
-        Thread.sleep(2000);
-        driver.findElement(By.id(address_input3)).click();
-        driver.findElement(By.xpath(address_option_three)).click();
+        driver.findElement(By.id(address_input3)).sendKeys(Keys.ARROW_DOWN);
+        driver.findElement(By.id(address_input3)).sendKeys(Keys.ENTER);
     }
     public static void click_ADD_ROW_Button() throws IOException, InterruptedException {
         Thread.sleep(2000);
@@ -281,7 +282,7 @@ public class UiNavigationPortalpage {
     }
     public static void verify_ISP_Header() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        String expectedTitleISPH = "PT Zambia";
+        String expectedTitleISPH = "Zamnet";
         String actualTitleISPH = driver.findElement(By.xpath(ISP_Header)).getText();
         Assert.assertEquals(actualTitleISPH, expectedTitleISPH);
         String screenshotPath = captureScreenshot(driver);
@@ -313,7 +314,7 @@ public class UiNavigationPortalpage {
     }
 
     public static void click_product_option_one() throws IOException, InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath(product_option_one)).click();
         Thread.sleep(2000);
         String screenshotPath = captureScreenshot(driver);
@@ -322,7 +323,7 @@ public class UiNavigationPortalpage {
     }
 
     public static void click_Product_Input() throws IOException, InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Product_Input)).click();
         Thread.sleep(2000);
         String screenshotPath = captureScreenshot(driver);
@@ -346,11 +347,11 @@ public class UiNavigationPortalpage {
                 MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
     }
     public static void enter_address_input() throws InterruptedException {
-        Thread.sleep(4000);
-        driver.findElement(By.xpath(address_input)).sendKeys("612, 2000, Bal Harbor Boulevard, Punta Gorda, USA, 33950, Florida, Old Data");
         Thread.sleep(2000);
-        driver.findElement(By.xpath(address_input)).click();
-        driver.findElement(By.xpath(address_option_one)).click();
+        driver.findElement(By.xpath(address_input)).sendKeys("2658 Mosi-o-tunya Road, Lusaka Central, Lusaka, 00000, Lusaka Province, ZM");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(address_input)).sendKeys(Keys.ARROW_DOWN);
+        driver.findElement(By.xpath(address_input)).sendKeys(Keys.ENTER);
     }
     public static void enter_mobile_number() throws IOException, InterruptedException {
         Thread.sleep(2000);
