@@ -12,6 +12,7 @@
             <class name="Tests.EvotelPortalTest"/>
             <class name="Tests.PTZambiaPortalTest"/>
             <class name="Tests.MagnoliaPortalTest"/>
+            <class name="Tests.UnifybrPortalTest"/>
         </classes>
     </test>
 </suite>
