@@ -14,6 +14,7 @@
             <class name="Tests.MagnoliaPortalTest"/>
             <class name="Tests.UnifybrPortalTest"/>
             <class name="Tests.LinklayerPortalTest"/>
+            <class name="Tests.MFibrePortalTest"/>
         </classes>
     </test>
 </suite>
