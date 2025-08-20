@@ -13,6 +13,7 @@
             <class name="Tests.PTZambiaPortalTest"/>
             <class name="Tests.MagnoliaPortalTest"/>
             <class name="Tests.UnifybrPortalTest"/>
+            <class name="Tests.LinklayerPortalTest"/>
         </classes>
     </test>
 </suite>
