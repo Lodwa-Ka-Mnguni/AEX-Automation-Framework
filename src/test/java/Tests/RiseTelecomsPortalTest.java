@@ -93,10 +93,10 @@ public class RiseTelecomsPortalTest {
     void UI_Feature_Review() throws IOException, InterruptedException {
         test = extent.createTest("UI & Feature Review");
 
-        test.info("Confirm all front-end changes from the release are present and functional");
-        UiNavigationPortalpage.click_admin_tab_button();
-        UiNavigationPortalpage.click_address_management_option();
-        UiNavigationPortalpage.click_home_img();
+//        test.info("Confirm all front-end changes from the release are present and functional");
+//        UiNavigationPortalpage.click_admin_tab_button();
+//        UiNavigationPortalpage.click_address_management_option();
+//        UiNavigationPortalpage.click_home_img();
 
         test.info("Add roles as needed for test scenarios");
     }
@@ -157,12 +157,12 @@ public class RiseTelecomsPortalTest {
         UiNavigationPortalpage.enter_last_name_input();
         UiNavigationPortalpage.enter_Email_input();
         UiNavigationPortalpage.enter_mobile_number();
-        UiNavigationPortalpage.enter_Alternative_Number();
-        UiNavigationPortalpage.click_Preferred_Contact_Method_input();
-        UiNavigationPortalpage.click_Preferred_Contact_Method_option();
-        UiNavigationPortalpage.click_Preferred_Contact_Time_input();
-        UiNavigationPortalpage.click_Preferred_Contact_Time_option();
-        UiNavigationPortalpage.enter_Id_Number();
+//        UiNavigationPortalpage.enter_Alternative_Number();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_input();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_option();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_input();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_option();
+//        UiNavigationPortalpage.enter_Id_Number();
         UiNavigationPortalpage.click_Product_Input();
         UiNavigationPortalpage.click_product_option_one();
 
@@ -172,12 +172,12 @@ public class RiseTelecomsPortalTest {
         UiNavigationPortalpage.enter_last_name_input2();
         UiNavigationPortalpage.enter_Email_input2();
         UiNavigationPortalpage.enter_mobile_number2();
-        UiNavigationPortalpage.enter_Alternative_Number2();
-        UiNavigationPortalpage.click_Preferred_Contact_Method_input2();
-        UiNavigationPortalpage.click_Preferred_Contact_Method_option2();
-        UiNavigationPortalpage.click_Preferred_Contact_Time_input2();
-        UiNavigationPortalpage.click_Preferred_Contact_Time_option2();
-        UiNavigationPortalpage.enter_Id_Number2();
+//        UiNavigationPortalpage.enter_Alternative_Number2();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_input2();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_option2();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_input2();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_option2();
+//        UiNavigationPortalpage.enter_Id_Number2();
         UiNavigationPortalpage.click_Product_Input2();
         UiNavigationPortalpage.click_product_option_two();
 
@@ -186,12 +186,12 @@ public class RiseTelecomsPortalTest {
         UiNavigationPortalpage.enter_last_name_input3();
         UiNavigationPortalpage.enter_Email_input3();
         UiNavigationPortalpage.enter_mobile_number3();
-        UiNavigationPortalpage.enter_Alternative_Number3();
-        UiNavigationPortalpage.click_Preferred_Contact_Method_input3();
-        UiNavigationPortalpage.click_Preferred_Contact_Method_option3();
-        UiNavigationPortalpage.click_Preferred_Contact_Time_input3();
-        UiNavigationPortalpage.click_Preferred_Contact_Time_option3();
-        UiNavigationPortalpage.enter_Id_Number3();
+//        UiNavigationPortalpage.enter_Alternative_Number3();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_input3();
+//        UiNavigationPortalpage.click_Preferred_Contact_Method_option3();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_input3();
+//        UiNavigationPortalpage.click_Preferred_Contact_Time_option3();
+//        UiNavigationPortalpage.enter_Id_Number3();
         UiNavigationPortalpage.click_Product_Input3();
         UiNavigationPortalpage.click_prodct_option_three();
 

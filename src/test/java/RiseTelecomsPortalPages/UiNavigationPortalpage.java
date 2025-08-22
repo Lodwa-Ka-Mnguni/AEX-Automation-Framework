@@ -3,10 +3,12 @@ package RiseTelecomsPortalPages;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 import java.io.IOException;
 
+import static Tests.RiseTelecomsPortalTest.driver;
 import static Tests.RiseTelecomsPortalTest.*;
 
 public class UiNavigationPortalpage {
@@ -20,29 +22,29 @@ public class UiNavigationPortalpage {
     static String search_serial_button ="//*[@id=\"btnSearch\"]";
     static String reports_tab ="/html/body/div[3]/header/div/div/div[2]/ul/li[9]/a";
     static String reports_overview_option ="//a[normalize-space()='Overview']";
-    static String admin_tabs = "/html/body/div[3]/div/div[2]/ul/li[5]/a";
+    static String admin_tabs = "/html/body/div[2]/div/div/div[2]/ul/li[4]/a";
     static String address_management_op = "/html/body/div[3]/div/div[2]/ul/li[5]/ul/li[10]/a";
-    static String Service_tab = "/html/body/div[3]/div/div[2]/ul/li[3]/a";
-    static String Dashboard_option = "/html/body/div[3]/div/div[2]/ul/li[3]/ul/li[2]/a";
+    static String Service_tab = "/html/body/div[2]/div/div/div[2]/ul/li[2]/a";
+    static String Dashboard_option = "//a[@title='Services Dashboard']";
     static String Service_dashdoard_header = "/html/body/div[4]/div/div/div/header/h1";
     static String summary_accordion_element = "//*[@id=\"ui-id-1\"]";
     static String home_connect_accordion_element = "//*[@id=\"ui-id-3\"]";
-    static String ADD_SERVICES ="//a[@title='Add Service/s']";
+    static String ADD_SERVICES ="//a[@title='Add Bulk Accounts']";
     static String select_service_provider ="//*[@id=\"ServiceProvider\"]";
     static String option_one ="//*[@id=\"ServiceProvider\"]/option[3]";
     static String Submit_Button_provoder ="//*[@id=\"btnSubmit\"]";
-    static String address_input ="//*[@id=\"PredefinedPremise0\"]";
-    static String address_input2 ="PredefinedPremise1";
-    static String address_input3 ="PredefinedPremise2";
-    static String first_name_input = "//*[@id=\"dataTable\"]/tbody/tr[1]/td[4]/input";
-    static String first_name_input2 = "//*[@id=\"dataTable\"]/tbody/tr[2]/td[4]/input";
-    static String first_name_input3 = "//*[@id=\"dataTable\"]/tbody/tr[3]/td[4]/input";
-    static String last_name_input ="//*[@id=\"dataTable\"]/tbody/tr[1]/td[5]/input";
-    static String last_name_input2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[5]/input";
-    static String last_name_input3 = "//*[@id=\"dataTable\"]/tbody/tr[3]/td[5]/input";
-    static String mobile_number ="//*[@id=\"dataTable\"]/tbody/tr/td[7]/input";
-    static String mobile_number2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[7]/input";
-    static String mobile_number3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[7]/input";
+    static String address_input ="//*[@id=\"Address0\"]";
+    static String address_input2 ="Address1";
+    static String address_input3 ="Address2";
+    static String first_name_input = "//*[@id=\"dataTable\"]/tbody/tr[1]/td[5]/input";
+    static String first_name_input2 = "//*[@id=\"dataTable\"]/tbody/tr[2]/td[5]/input";
+    static String first_name_input3 = "//*[@id=\"dataTable\"]/tbody/tr[3]/td[5]/input";
+    static String last_name_input ="//*[@id=\"dataTable\"]/tbody/tr[1]/td[6]/input";
+    static String last_name_input2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[6]/input";
+    static String last_name_input3 = "//*[@id=\"dataTable\"]/tbody/tr[3]/td[6]/input";
+    static String mobile_number ="//*[@id=\"dataTable\"]/tbody/tr[1]/td[8]/input";
+    static String mobile_number2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[8]/input";
+    static String mobile_number3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[8]/input";
     static String Id_Number ="//*[@id=\"dataTable\"]/tbody/tr/td[8]/input";
     static String Id_Number2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[8]/input";
     static String Id_Number3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[8]/input";
@@ -52,16 +54,16 @@ public class UiNavigationPortalpage {
     static String product_option_one ="//*[@id=\"ProductId0\"]/option[2]";
     static String product_option_two ="//*[@id=\"ProductId1\"]/option[4]";
     static String prodct_option_three ="//*[@id=\"ProductId2\"]/option[5]";
-    static String Email_input ="//*[@id=\"dataTable\"]/tbody/tr/td[6]/input";
-    static String Email_input2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[6]/input";
-    static String Email_input3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[6]/input";
-    static String ISP_Header ="/html/body/div[4]/div/div/div/form/div/div/span";
-    static String Service_provider_header ="/html/body/div[4]/div/div/div/form/div/div[1]/span";
-    static String ADD_ROW_Button ="/html[1]/body[1]/div[4]/div[1]/form[1]/div[1]/a[2]";
+    static String Email_input ="//*[@id=\"dataTable\"]/tbody/tr[1]/td[7]/input";
+    static String Email_input2 ="//*[@id=\"dataTable\"]/tbody/tr[2]/td[7]/input";
+    static String Email_input3 ="//*[@id=\"dataTable\"]/tbody/tr[3]/td[7]/input";
+    static String ISP_Header ="/html/body/div[3]/div[2]/div/div/form/div/div";
+    static String Service_provider_header ="/html/body/div[3]/div/div/div/form/div/div[1]/span";
+    static String ADD_ROW_Button ="//*[@id=\"addMore\"]";
     static String address_option_one ="/html[1]/body[1]/ul[1]/li[2]";
     static String address_option_two ="/html[1]/body[1]/ul[2]/li[1]";
     static String address_option_three ="/html[1]/body[1]/ul[3]/li[3]";
-    static String home_img = "/html/body/div[3]/div/div[1]/a/img";
+    static String home_img = "/html/body/div[2]/div/div/div[1]/a/img";
     static String promo_and_discount = "/html/body/div[3]/header/div/div/div[2]/ul/li[4]/ul/li[11]/a";
     static String promotions_header = "/html/body/div[3]/header/div/div/div[2]/ul/li[1]/a";
     static String Preferred_Contact_Method_input ="//*[@id=\"showPreferred\"]/select";
@@ -235,17 +237,17 @@ public class UiNavigationPortalpage {
     }
     public static void enter_address_input22() throws InterruptedException {
         Thread.sleep(3000);
-        driver.findElement(By.id(address_input2)).sendKeys("3456, Sandpiper Drive, Charlotte, Punta Gorda, USA, 33950, Florida");
+        driver.findElement(By.id(address_input2)).sendKeys("48 Staib St, New Doornfontein, Johannesburg, 2094, South Africa");
         Thread.sleep(2000);
-        driver.findElement(By.id(address_input2)).click();
-        driver.findElement(By.xpath(address_option_two)).click();
+        driver.findElement(By.id(address_input2)).sendKeys(Keys.ARROW_DOWN);
+        driver.findElement(By.id(address_input2)).sendKeys(Keys.ENTER);
     }
     public static void enter_address_input3() throws InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(By.id(address_input3)).sendKeys("2402, 2001, Bal Harbor Boulevard, Charlotte, Punta Gorda, USA, 33950, Florida");
+        driver.findElement(By.id(address_input3)).sendKeys("71 Sivewright Ave, New Doornfontein, Johannesburg, 2094, South Africa");
         Thread.sleep(2000);
-        driver.findElement(By.id(address_input3)).click();
-        driver.findElement(By.xpath(address_option_three)).click();
+        driver.findElement(By.id(address_input3)).sendKeys(Keys.ARROW_DOWN);
+        driver.findElement(By.id(address_input3)).sendKeys(Keys.ENTER);
     }
     public static void click_ADD_ROW_Button() throws IOException, InterruptedException {
         Thread.sleep(2000);
@@ -281,7 +283,7 @@ public class UiNavigationPortalpage {
     }
     public static void verify_ISP_Header() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        String expectedTitleISPH = "Active Fibre";
+        String expectedTitleISPH = "Afrihost";
         String actualTitleISPH = driver.findElement(By.xpath(ISP_Header)).getText();
         Assert.assertEquals(actualTitleISPH, expectedTitleISPH);
         String screenshotPath = captureScreenshot(driver);
@@ -347,10 +349,10 @@ public class UiNavigationPortalpage {
     }
     public static void enter_address_input() throws InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(By.xpath(address_input)).sendKeys("612, 2000, Bal Harbor Boulevard, Punta Gorda, USA, 33950, Florida, Old Data");
+        driver.findElement(By.xpath(address_input)).sendKeys("80 Sivewright Ave, New Doornfontein, Johannesburg, 2094, South Africa");
         Thread.sleep(2000);
-        driver.findElement(By.xpath(address_input)).click();
-        driver.findElement(By.xpath(address_option_one)).click();
+        driver.findElement(By.xpath(address_input)).sendKeys(Keys.ARROW_DOWN);
+        driver.findElement(By.xpath(address_input)).sendKeys(Keys.ENTER);
     }
     public static void enter_mobile_number() throws IOException, InterruptedException {
         Thread.sleep(2000);
@@ -503,7 +505,7 @@ public class UiNavigationPortalpage {
     }
     public static void verify_hyperfiber_accordion_element() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        String expectedTitleMAP = "Home-Connect";
+        String expectedTitleMAP = "Cool Ideas";
         String actualTitleMAP = driver.findElement(By.xpath(home_connect_accordion_element)).getText();
         Assert.assertEquals(actualTitleMAP, expectedTitleMAP);
         String screenshotPath = captureScreenshot(driver);
