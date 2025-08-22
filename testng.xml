@@ -11,6 +11,7 @@
             <class name="Tests.PrimeOnePortalTest"/>
             <class name="Tests.EvotelPortalTest"/>
             <class name="Tests.PTZambiaPortalTest"/>
+            <class name="Tests.MagnoliaPortalTest"/>
         </classes>
     </test>
 </suite>
