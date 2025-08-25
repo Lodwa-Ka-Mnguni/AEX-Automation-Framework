@@ -236,7 +236,7 @@ public class UiNavigationPortalpage {
     }
     public static void enter_address_input22() throws InterruptedException {
         Thread.sleep(3000);
-        driver.findElement(By.id(address_input2)).sendKeys("2200 Harry Mwaanga Nakambula Road, Lusaka, Zambia");
+        driver.findElement(By.id(address_input2)).sendKeys("1 Chungu Street, Lusaka, Zambia");
         Thread.sleep(2000);
         driver.findElement(By.id(address_input2)).sendKeys(Keys.ARROW_DOWN);
         driver.findElement(By.id(address_input2)).sendKeys(Keys.ENTER);

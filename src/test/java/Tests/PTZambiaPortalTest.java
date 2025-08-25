@@ -30,7 +30,7 @@ public class PTZambiaPortalTest {
         driver = new ChromeDriver();
         driver.get("https://preprod.ptzambia.dev.aex.systems/");
 
-        ExtentSparkReporter spark = new ExtentSparkReporter("target/ZoomFiberPortal.html");
+        ExtentSparkReporter spark = new ExtentSparkReporter("target/PTZambiaPortal.html");
         spark.loadXMLConfig(new File("extent-config.xml"));
         extent.attachReporter(spark);
 

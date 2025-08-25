@@ -390,7 +390,7 @@ public class UiNavigationPortalpage {
     }
 
     public static void click_Dashboard_option() throws IOException, InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath(Dashboard_option)).click();
         Thread.sleep(2000);
         String screenshotPath = captureScreenshot(driver);
